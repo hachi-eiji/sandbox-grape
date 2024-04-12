@@ -5,7 +5,7 @@ module V1
     resource :users do
       get '/' do
         users = User.all
-        present users, with: V1::Entities::User, type: 'admin'
+        present users, with: V1::Entities::User
       end
     end
   end
