@@ -8,5 +8,5 @@ class App < Grape::API
     { healthy: true }
   end
 
-  mount V1
+  mount V1::Root
 end
