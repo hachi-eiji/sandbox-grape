@@ -11,7 +11,8 @@ class V1::Users < Grape::API
     end
     route_param :id do
       get do
-        User.find(params[:id])
+        user = User.find(params[:id])
+        present user, with: V1::Entities::User
       end
 
       mount V1::Users::Status
