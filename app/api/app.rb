@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class App < Grape::API
+  include ::Helpers::ErrorHelper
+
   format :json
   prefix :api
 
