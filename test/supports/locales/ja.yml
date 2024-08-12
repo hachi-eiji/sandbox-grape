@@ -1,0 +1,14 @@
+ja:
+  grape:
+    errors:
+      attributes:
+        id: "foo"
+        type: "ダイプ"
+        dummy_api:
+          id: "ダミーID"
+          name: "ユーザ名"
+          elements: "要素"
+          comment:
+            id: "コメントID"
+            comment: "コメント"
+            type: "コメントタイプ"
