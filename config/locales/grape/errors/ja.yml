@@ -1,0 +1,17 @@
+ja:
+  grape:
+    errors:
+      format: ! "%{attributes}%{message}"
+      messages:
+        presence: "は必須です"
+        coerce: "は不正な形式です"
+        values: "は無効な値です"
+      attributes:
+        v1:
+          users:
+            status:
+              type: "形式"
+              name: "名前"
+              obj:
+                word: "ワード"
+                test: "テスト"
