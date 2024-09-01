@@ -14,7 +14,15 @@ module SandboxGrape
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    config.autoload_lib(ignore: %w[assets tasks dummy runners])
+
+    lib = root.join("lib")
+    config.autoload_paths << lib
+    config.eager_load_paths << lib
+
+    # dummyはファイル名などがRails Wayに則っていないのでautoload, eager_loadから外す
+    # クラス自体はinitializers
+    config.eager_load_paths -= [ "#{config.root}/lib/dummy" ]
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -25,7 +33,6 @@ module SandboxGrape
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.i18n.default_locale = :ja
-
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
